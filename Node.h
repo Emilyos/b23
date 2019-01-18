@@ -11,7 +11,8 @@ class Node {
 private:
     friend class LCRS_BalancedTree;
 
-    Node *subLeft, *subMiddle, *subRight;
+    Node *leftChild;
+    Node *rightSbiling;
     Node *parent;
     /**max key in this node subtreee, available only for internal Nodes*/
     Key *key;
@@ -23,6 +24,7 @@ private:
     Node();
 
     ~Node();
+
     bool isLeaf();
 
     void updateMaxKey();
@@ -30,6 +32,7 @@ private:
     void updateChildren(Node *l, Node *m, Node *r);
 
     void insertLeftTo(Node *node);
+
     void insertRightTo(Node *node);
 };
 
